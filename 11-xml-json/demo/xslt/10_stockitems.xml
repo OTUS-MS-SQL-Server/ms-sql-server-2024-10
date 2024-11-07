@@ -1,0 +1,52 @@
+﻿<items>
+  <item>
+    <StockItemID>1</StockItemID>
+    <StockItemName>USB missile launcher (Green)</StockItemName>
+    <UnitPrice>25.00</UnitPrice>
+  </item>
+  <item>
+    <StockItemID>2</StockItemID>
+    <StockItemName>USB rocket launcher (Gray)</StockItemName>
+    <UnitPrice>25.00</UnitPrice>
+  </item>
+  <item>
+    <StockItemID>3</StockItemID>
+    <StockItemName>Office cube periscope (Black)</StockItemName>
+    <UnitPrice>18.50</UnitPrice>
+  </item>
+  <item>
+    <StockItemID>4</StockItemID>
+    <StockItemName>USB food flash drive - sushi roll</StockItemName>
+    <UnitPrice>32.00</UnitPrice>
+  </item>
+  <item>
+    <StockItemID>5</StockItemID>
+    <StockItemName>USB food flash drive - hamburger</StockItemName>
+    <UnitPrice>32.00</UnitPrice>
+  </item>
+  <item>
+    <StockItemID>6</StockItemID>
+    <StockItemName>USB food flash drive - hot dog</StockItemName>
+    <UnitPrice>32.00</UnitPrice>
+  </item>
+  <item>
+    <StockItemID>7</StockItemID>
+    <StockItemName>USB food flash drive - pizza slice</StockItemName>
+    <UnitPrice>32.00</UnitPrice>
+  </item>
+  <item>
+    <StockItemID>8</StockItemID>
+    <StockItemName>USB food flash drive - dim sum 10 drive variety pack</StockItemName>
+    <UnitPrice>240.00</UnitPrice>
+  </item>
+  <item>
+    <StockItemID>9</StockItemID>
+    <StockItemName>USB food flash drive - banana</StockItemName>
+    <UnitPrice>32.00</UnitPrice>
+  </item>
+  <item>
+    <StockItemID>10</StockItemID>
+    <StockItemName>USB food flash drive - chocolate bar</StockItemName>
+    <UnitPrice>32.00</UnitPrice>
+  </item>
+</items>

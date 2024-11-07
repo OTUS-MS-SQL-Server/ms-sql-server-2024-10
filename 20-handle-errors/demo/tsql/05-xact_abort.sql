@@ -1,0 +1,63 @@
+/*
+SET XACT_ABORT ON при ошибке вся транзакция завершается и выполняется ее откат
+*/
+-- https://docs.microsoft.com/ru-ru/sql/t-sql/statements/set-xact-abort-transact-sql
+
+
+DROP TABLE IF EXISTS t1;  
+DROP TABLE IF EXISTS t2;  
+GO
+
+CREATE TABLE t1 (A INT NOT NULL PRIMARY KEY);  
+CREATE TABLE t2 (B INT NOT NULL);  
+
+ALTER TABLE t2 ADD CONSTRAINT dd FOREIGN KEY (B) REFERENCES t1 (A);
+GO  
+
+INSERT INTO t1 VALUES (1);  
+INSERT INTO t1 VALUES (3);  
+INSERT INTO t1 VALUES (4);  
+INSERT INTO t1 VALUES (6);  
+GO  
+
+-- XACT_ABORT OFF ---
+
+SET XACT_ABORT OFF;  
+
+GO  
+
+SELECT A FROM t1;
+SELECT B FROM t2;
+
+BEGIN TRANSACTION;  
+	INSERT INTO t2 VALUES (1);  
+	INSERT INTO t2 VALUES (2); -- Foreign key error.  
+	INSERT INTO t2 VALUES (3);  
+COMMIT TRANSACTION;  
+
+-- Что будет в t2?
+SELECT * FROM t2; 
+GO  
+
+-- XACT_ABORT ON ---
+SET XACT_ABORT ON;  
+GO  
+
+SELECT A FROM t1;
+SELECT B FROM t2;
+
+BEGIN TRANSACTION;  
+	INSERT INTO t2 VALUES (4);  
+	INSERT INTO t2 VALUES (5); -- Foreign key error.  
+	INSERT INTO t2 VALUES (6);  
+COMMIT TRANSACTION;  
+GO  
+
+-- Что будет в t2?
+SELECT B FROM t2; 
+GO  
+
+DROP TABLE IF EXISTS t2;
+
+DROP TABLE IF EXISTS t1;
+GO
